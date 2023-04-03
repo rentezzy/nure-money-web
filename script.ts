@@ -1,14 +1,38 @@
 const routes = {
-  new: "new.html",
-  news: "news.html",
+  new: { root: "new.html", handler: newHandler },
+  news: { root: "news.html", handler: newsHandler },
 } as const;
 
 const root = document.getElementById("root") as HTMLElement;
 const nav = document.getElementById("sidenav") as HTMLElement;
+const showhide = document.querySelector(".side__showhide") as HTMLElement;
+const burger = document.querySelector(".header__burger") as HTMLElement;
+const header = document.querySelector(".header__nav") as HTMLElement;
 
-const inner = fetch(`./pages/${routes["news"]}`)
+const inner = fetch(`./pages/${routes["news"].root}`)
   .then((data) => data.text())
-  .then((inner) => (root.innerHTML = inner));
+  .then((inner) => (root.innerHTML = inner))
+  .then(newsHandler);
+
+function newsHandler() {
+  const video = document.getElementById("news__cat__video") as HTMLVideoElement;
+  const play = document.getElementById("news_play");
+  const pause = document.getElementById("news_pause");
+  play.addEventListener("click", (e) => {
+    video.play();
+  });
+  pause.addEventListener("click", (e) => {
+    video.pause();
+  });
+}
+function newHandler() {}
+
+showhide.addEventListener("click", (e) => {
+  nav.classList.toggle("side_show");
+});
+burger.addEventListener("click", (e) => {
+  header.classList.toggle("_active")
+});
 
 nav.addEventListener("click", async (event) => {
   if (!event || !event.target) return;
@@ -17,7 +41,7 @@ nav.addEventListener("click", async (event) => {
   if (target.tagName !== "LI" && parent.tagName !== "LI") return;
   const id = target.tagName === "LI" ? target.dataset.id : parent.dataset.id;
   if (!routes[id]) return;
-  const inner = await fetch(`./pages/${routes[id]}`).then((data) =>
+  const inner = await fetch(`./pages/${routes[id].root}`).then((data) =>
     data.text()
   );
   const selectedItem = document.querySelector(".side__element_selected");
@@ -28,4 +52,5 @@ nav.addEventListener("click", async (event) => {
   ) as HTMLElement;
   listElement.classList.toggle("side__element_selected");
   root.innerHTML = inner;
+  routes[id].handler();
 });

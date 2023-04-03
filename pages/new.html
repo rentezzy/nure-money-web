@@ -1,1 +1,41 @@
-<h1>hi</h1>
+<!-- 4. Створити форму з використанням елементів datetime, email, tel, url, та
+використати атрибути перевірки введення даних у форму. -->
+
+<div class="newuser">
+  <form action="" class="newuser__form">
+    <h2>Створити нового користувача</h2>
+    <p>Email*</p>
+    <input
+      type="email"
+      class="newuser__form__input newuser__form__email"
+      maxlength="32"
+      required
+    />
+    <p>Номер телефону*</p>
+    <input
+      type="tel"
+      pattern="^[0-9\-\+]{9,15}$"
+      class="newuser__form__input newuser__form__tel"
+      maxlength="13"
+      required
+    />
+    <p>Дата народження*</p>
+    <input
+      type="datetime-local"
+      class="newuser__form__input newuser__form__datetime"
+      value="2005-01-01T00:00"
+      min="1930-01-01T00:00"
+      max="2005-01-01T00:00"
+      required
+    />
+    <p>Персональний сайт</p>
+    <input type="url" class="newuser__form__input newuser__form__url" />
+    <div class="newuser__button">
+      <div class="newuser__newuserborder">
+        <div class="newuser__newuserbg">
+          <button class="newuser__newuserbutton">Створити</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
