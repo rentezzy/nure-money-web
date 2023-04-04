@@ -11,7 +11,9 @@ h2,
 h3 {
   color: #d9d9d9;
 }
-
+hr {
+  margin: 10px 0px;
+}
 :root {
   --gradient: radial-gradient(
     circle,
@@ -189,8 +191,7 @@ h3 {
   cursor: pointer;
   background-color: #ffffff3f;
 }
-.header__dropmenu {
-}
+
 .header__dropmenubtn {
   display: flex;
 }
@@ -388,9 +389,6 @@ h3 {
   z-index: 50;
 }
 
-.main__section {
-}
-
 /* NEWS PAGE */
 
 .news {
@@ -481,8 +479,7 @@ h3 {
 }
 
 /* NEWUSER */
-.newuser {
-}
+
 .newuser__form {
   display: flex;
   flex-direction: column;
@@ -552,6 +549,102 @@ h3 {
   background-color: #6d6d6d;
   cursor: pointer;
 }
+
+/* FEATURES */
+.features {
+  position: relative;
+}
+#features__fonts {
+  min-height: 100px;
+}
+#features__fonts__placeholder {
+  max-width: 1155px;
+  word-wrap: break-word;
+}
+.features__jumpimg img {
+  position: absolute;
+  margin-top: 30px;
+  width: 100px;
+  height: 100px;
+  top: auto;
+}
+.features__jumpimg__buttons {
+  width: 100px;
+  height: 160px;
+}
+.features__jumpimg__start {
+  width: 48px;
+}
+
+.features__jumpimg__stop {
+  width: 48px;
+}
+.features__deletedocumentbg {
+  z-index: 100;
+  background-color: #ffffff;
+  width: 100%;
+  position: absolute;
+  transition: all 0.2s;
+}
+
+.features__tip__message {
+  position: absolute;
+  padding: 10px 20px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  text-align: center;
+  color: #d9d9d9;
+  background: #525252;
+}
+
+.features__colored {
+  display: flex;
+  justify-content: space-between;
+}
+.features__colored__list {
+  list-style: none;
+  padding: 10px;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+}
+.features__colored__element:hover {
+  list-style: disc;
+  cursor: pointer;
+}
+.features__colored__square {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: #fff;
+}
+.features__cords {
+  color: #d9d9d9;
+}
+
+.features__sort__list {
+  list-style: none;
+  padding: 10px;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+}
+
+.features__nocopy {
+  color: #d9d9d9;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -khtml-user-select: none;
+}
+
+.features__from {
+  color: #d9d9d9;
+}
+
 /* CHAT */
 .chat {
   position: fixed;
@@ -579,6 +672,7 @@ h3 {
   background-color: #acacac;
   border-radius: 25%;
   cursor: pointer;
+  color: #ff0000;
 }
 /* FOOTER */
 
