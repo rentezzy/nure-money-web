@@ -1,0 +1,13 @@
+* {
+  border: 1px solid black;
+}
+body {
+  min-height: 100vh;
+  border: none;
+}
+.row{
+    border: none;
+}
+.container{
+    border: none;
+}
